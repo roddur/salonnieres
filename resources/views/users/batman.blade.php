@@ -80,7 +80,7 @@ h1.title{
       </div>
 <div class="row" style="padding-left:20px;padding-right:10%;">
 <figure style="float: left;" class="col-sm-4">
-    <img src="aa.jpg" alt="propic"  width="200" height="220" >
+    <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="propic"  width="200" height="220" >
   <figcaption><a style="color:blue;"href="https://www.w3schools.com"> Update profile photo</a></figcaption>
   </figure>
 
@@ -102,7 +102,7 @@ h1.title{
  
   </tr>
   <?php
-    $users = DB::table('booking_info')->where('user', '=', Auth::user()->name)->get();
+    $users = DB::table('booking_info')->where('user', '=', Auth::user()->name)->orderBy('time', 'desc')->get();
     foreach($users as $row) {
         $t=($row->shift==0)?"morning":"evening";
         echo "<tr><td>You have booked succesfully <span style=\"color:blue\">Hilbert Grand Hotel</span> for <b>".$row->booking_date." ".$t."</b> at <b>". $row->time. "</b></td></tr>";

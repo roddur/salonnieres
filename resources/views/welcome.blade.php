@@ -136,7 +136,7 @@
             <h1>Welcome</h1>
             @if (Auth::guest())
                 <p>Sign in for the best experience</p>
-                <a href="/login" class="btn btn-primary" role="button">Sign in</a><br><br>
+                <a href="/login" class="btn btn-primary" role="button">Login</a><br><br>
                 <p>Don't have an account ? <a href="/register">Register Now</a></p>
             @else
             	<p>{{ Auth::user()->name }}</p>
